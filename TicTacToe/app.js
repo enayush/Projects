@@ -1,4 +1,5 @@
 const reset = document.querySelector('#btn')
+const ngame = document.querySelector('#ngame')
 const board = document.querySelectorAll('.box');
 const result = document.querySelector('.result')
 const userSpan = document.querySelector('.user-score')
@@ -34,14 +35,19 @@ board.forEach(box => {
         const val = checkWinner();
         if(val==="X"){
             scoreUpdate(true);
-            Repeat();
+            disableBtn();
         }
         else if(val=="O"){
             scoreUpdate(false);
-            Repeat();
+            disableBtn();
         }
     })
 });
+function disableBtn(){
+    board.forEach(box=>{
+        box.classList.remove('disable')
+    })
+}
 
 function checkWinner(){
     let ans="";
@@ -72,18 +78,6 @@ function scoreUpdate(a){
         compSpan.innerHTML=compScore;
     }
 }
-
-function Repeat(){
-    setTimeout(function(){
-        board.forEach(box=>{
-            box.innerHTML="";
-            box.classList.remove('disable')
-        })
-        result.innerHTML = "Let's Start"
-        turn = true;
-    },2000)
-}
-
 reset.addEventListener('click',(e)=>{
     board.forEach(box=>{
         box.innerHTML="";
@@ -95,4 +89,12 @@ reset.addEventListener('click',(e)=>{
     compScore=0;
     userSpan.innerHTML = userScore;
     compSpan.innerHTML= compScore;
+})
+ngame.addEventListener('click',(e)=>{
+    board.forEach(box=>{
+        box.innerHTML="";
+        box.classList.remove('disable')
+    })
+    result.innerHTML = "Let's Start";
+    turn = true;
 })

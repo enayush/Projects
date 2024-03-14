@@ -91,3 +91,7 @@ h3{
 .disable{
     pointer-events:none;
 }
+.btns{
+    display: flex;
+    gap: 30px;
+}
