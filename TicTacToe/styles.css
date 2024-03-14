@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+}
+h1{
+    color: black;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+h3{
+    color: white;
+    margin: auto 30px;
+}
+.board{
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vmin;
+}
+.square{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
+.row{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.square.top{
+    border-bottom: 4px solid white;
+}
+.square.mid{
+    border-bottom: 4px solid white;
+}
+.square.left{
+    border-right: 4px solid white;
+}
+.square.right{
+    border-left: 4px solid white;
+}
+.btn{
+    margin : 30px auto;
+}
+
+
+.score-board{
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    border: 3px solid white;
+    padding: 10px 25px;
+    margin: 15px auto;
+    font-size: 46px;
+    
+}
+.badge{
+    background-color: red;
+    border-radius: 4%;
+    font-size: 14px;
+    position: absolute;
+}
+#user-label{
+    top: 35px;
+    left: -50px;
+}
+#comp-label{
+    top: 35px;
+    right: -50px;
+}
+
+.box:hover{
+    cursor: pointer;
+}
+.disable{
+    pointer-events:none;
+}
